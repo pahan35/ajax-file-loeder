@@ -10,7 +10,14 @@
     "ajax",
     "fileloader"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pahan35/ajax-file-loader.git"
+  },
   "author": "Pavlo Zhukov",
+  "bin": {
+    "ajax-file-loader": "./index.js"
+  },
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
