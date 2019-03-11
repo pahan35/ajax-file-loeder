@@ -3,7 +3,7 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 3035;
 
 
 app.use(bodyParser.json());         // to support JSON-encoded bodies
@@ -84,4 +84,4 @@ function loadByLink(link, path) {
 
 
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.listen(port, () => console.log(`Ajax file loader listening on port ${port}!`));
