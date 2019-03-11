@@ -65,15 +65,15 @@ function loadByLink(link, path) {
         const fs = require('fs');
 
         const file = fs.createWriteStream(path);
-        https.get(link, function (response) {
+        https.get(link, response => {
             response.pipe(file);
-            file.on('finish', function() {
+            file.on('finish', () => {
                 file.close();
             });
             response.on('end', () => {
                 resolve();
             });
-        }).on('error', function(err) { // Handle errors
+        }).on('error', err => { // Handle errors
             fs.unlink(path); // Delete the file async. (But we don't check the result)
             console.error(err.message);
             resolve();// go to next file
