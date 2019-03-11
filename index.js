@@ -2,6 +2,10 @@
 
 const bodyParser = require('body-parser');
 const express = require('express');
+const {promisify} = require('util');
+const mkdirp = require('mkdirp');
+const makeDir = promisify(mkdirp);
+
 const app = express();
 const port = 3035;
 
@@ -35,16 +39,8 @@ async function loadFiles({chunkName, files}) {
     console.log(`${chunkName} loading finished. ${files.length} files loaded`)
 }
 
-function createChunkFolder(chunkName) {
-    return new Promise((resolve, reject) => {
-        const mkdirp = require('mkdirp');
-        mkdirp(chunkName, function (err) {
-            if (err) return reject(err);
-            else  {
-                resolve()
-            }
-        });
-    })
+async function createChunkFolder(chunkName) {
+    await makeDir(chunkName);
 }
 
 async function loadFile(link, chunkName, i) {
