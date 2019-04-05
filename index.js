@@ -44,14 +44,15 @@ async function createChunkFolder(chunkName) {
 }
 
 async function loadFile(link, chunkName, i) {
+    const path = require('path');
     const url = require('url');
     const parsedUrl = url.parse(link);
 
     const fileName = parsedUrl.pathname.split('/').pop();
 
-    const path = chunkName + '\\' + fileName;
+    const filePath = chunkName + path.sep + fileName;
 
-    await loadByLink(link, path);
+    await loadByLink(link, filePath);
     console.log(`File: ${i}. ${fileName} loaded`);
 }
 
