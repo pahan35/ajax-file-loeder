@@ -17,7 +17,8 @@
   },
   "author": "Pavlo Zhukov",
   "bin": {
-    "ajax-file-loader": "./index.js"
+    "ajax-file-loader": "./index.js",
+    "afl": "./index.js"
   },
   "license": "ISC",
   "dependencies": {
