@@ -11,13 +11,13 @@ Due to this reason I decided to create mine.
 
 1. Install this package globally
     ```shell script
-        npm i -g ajax-file-loader
+    npm i -g ajax-file-loader
     ```
 
 2. Start it in folder where you want to store downloaded files
     
     ```shell script
-        ajax-file-loader
+    ajax-file-loader
     ```
 
     This action will open new Express server on port 3035.
