@@ -6,8 +6,25 @@ const {promisify} = require('util');
 const mkdirp = require('mkdirp');
 const makeDir = promisify(mkdirp);
 
+function normalizePort(val) {
+  const port = parseInt(val, 10)
+
+  if (Number.isNaN(port)) {
+    // named pipe
+    return val
+  }
+
+  if (port >= 0) {
+    // port number
+    return port
+  }
+
+  return false
+}
+
 const app = express();
-const port = 3035;
+
+const port = normalizePort(process.env.AFL_PORT || '3035');
 
 
 app.use(bodyParser.json());         // to support JSON-encoded bodies
