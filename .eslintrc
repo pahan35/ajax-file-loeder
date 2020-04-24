@@ -1,0 +1,54 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "google",
+    "plugin:prettier/recommended",
+  ],
+  "plugins": [
+    "prettier",
+    "simple-import-sort"
+  ],
+  "env": {
+    "node": true,
+    "es6": true,
+  },
+  "parserOptions": {
+    "ecmaVersion": 8
+  },
+  "rules": {
+    "simple-import-sort/sort": "error",
+    "prettier/prettier": "warn",
+    "no-console": 0,
+    "max-len": [2, {
+      "code": 160,
+      "tabWidth": 2,
+      "ignoreUrls": true,
+      "ignoreComments": false,
+      "ignoreRegExpLiterals": true,
+      "ignoreStrings": true,
+      "ignoreTemplateLiterals": true,
+    }],
+    "require-jsdoc": [2, {
+      "require": {
+        "FunctionDeclaration": false,
+        "MethodDefinition": false,
+        "ClassDeclaration": false,
+      },
+    }],
+    "max-classes-per-file": 0,
+    "no-return-assign": [2, "except-parens"],
+    "no-underscore-dangle": [2, {"allowAfterThis": true}],
+    "no-restricted-syntax": 0,
+    "no-continue": 0,
+    "dot-notation": [2, {"allowKeywords": true, "allowPattern": "^_[a-z]+$|^[a-z]+(_[a-z]+)+$"}],
+    "no-restricted-imports": [2, {"patterns": ["./*", "."]}],
+    "new-cap": 0,
+    "camelcase": 0,
+    "no-invalid-this": 0,
+    "object-curly-spacing": 0,
+    "quotes": 0,
+    "semi": 0,
+    "no-unused-expressions": 0,
+    "valid-typeof": 0
+  }
+}
