@@ -1,6 +1,6 @@
 {
   "name": "ajax-file-loader",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Allow load files passed as array of url to load with chunk name",
   "main": "index.js",
   "scripts": {
