@@ -2,9 +2,7 @@
 
 const bodyParser = require('body-parser')
 const express = require('express')
-const {promisify} = require('util')
 const mkdirp = require('mkdirp')
-const makeDir = promisify(mkdirp)
 
 function normalizePort(val) {
   const port = parseInt(val, 10)
@@ -58,7 +56,7 @@ async function loadFiles({chunkName, files}) {
 }
 
 async function createChunkFolder(chunkName) {
-  await makeDir(chunkName)
+  await mkdirp(chunkName)
 }
 
 async function loadFile(link, chunkName, i) {
